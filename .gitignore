@@ -5,3 +5,4 @@ training/functions.py
 training/events.py
 training/enum_qa.py
 training/training.jsonl
+.vscode
