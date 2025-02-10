@@ -4,7 +4,7 @@ Welcome to the **ForgeAI** repository! This project contains publicly available 
 
 ## Overview
 
-ForgeAI is built on top of **PHI-2**, an advanced AI model designed to process complex data structures. The training data in this repository is used to help **ForgeAI** better understand and respond to various **events**, **enums**, and **functions** in the context of the ForgeScript framework. By exploring these files, you can see the training data we use to teach PHI-2.
+ForgeAI is built on top of **PHI-2**, an advanced AI model designed to process complex data structures. The training data in this repository is used to help **ForgeAI** better understand and respond to various **events**, **enums**, and **functions** in the context of the ForgeScript framework. By exploring these files, you can see the training data we use to teach ForgeAI.
 
 The repository includes the following data:
 
@@ -14,7 +14,7 @@ The repository includes the following data:
 Each dataset is represented as a pair of JSON files:
 
 - A `.json` file that provides the raw data.
-- A `.jsonl` file that contains **QA pairs** derived from the raw data to train PHI-2.
+- A `.jsonl` file that contains **QA pairs** derived from the raw data to train ForgeAI.
 
 ## Repository Structure
 
