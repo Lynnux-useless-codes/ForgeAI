@@ -33,16 +33,16 @@ Here is an overview of the repository structure:
   │ │ └── functions
   │ │   ├── forgedb.json
   │ │   └── training.jsonl
-  │ ├── ForgeScript
-  │ │ ├── enums
-  │ │ │ ├── forgescript.json
-  │ │ │ └── training.jsonl
-  │ │ ├── events
-  │ │ │ ├── forgescript.json
-  │ │ │ └── training.jsonl
-  │ │ └── functions
-  │ ├── forgescript.json
-  │ └── training.jsonl
+  │ └── ForgeScript
+  │   ├── enums
+  │   │ ├── forgescript.json
+  │   │ └── training.jsonl
+  │   ├── events
+  │   │ ├── forgescript.json
+  │   │ └── training.jsonl
+  │   └── functions
+  |     ├── forgescript.json
+  │     └── training.jsonl
   └── training.jsonl
 ```
 
