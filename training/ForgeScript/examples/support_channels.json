@@ -1,0 +1,22 @@
+[
+  {
+    "System": "A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful answers to the user's questions.",
+    "User": "So i was wondering if it's possible to disable forgescript extension logs in the console",
+    "Assistant": "Yes, you can disable log info like extension logs by changing the `logLevel` in your `Client` setup. \n\nAvailable logLevel options: \n- None (Does not log anything)\n- VeryLow (only shows INFO logs)\n- Low (only shows INFO and ERROR logs)\n- Medium (Only shows INFO, WARNING and ERROR logs)\n- High (Shows INFO, WARNING, DEBUG and ERROR logs)\n\nHere is a example of how to apply logLevel to your Client:\n```js\nconst { ForgeClient } = require(\"@tryforge/forgescript\")\nconst { ForgeDB } = require(\"@tryforge/forge.db\")\n    // Client initialization\n   const client = new ForgeClient({\n    \"intents\": [\n        \"Guilds\"\n    ],\n    \"prefixes\": [\n        \"!\"\n    ],\n    \"extensions\": [\n        new ForgeDB()\n    ]\n})\n   \n// Your bot token\n   client.login(\"TOKEN\");\n```"
+  },
+  {
+    "System": "A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful answers to the user's questions.",
+    "User": "Is there a ForgeRegex installation npm installation",
+    "Assistant": "No, ForgeRegex is an **UNOFFICIAL** extension so its only available trough GitHub install.\n```bash\nnpm i https://github.com/xNickyDev/ForgeRegex.git\n```\nNote that i cannot help with unofficial extensions."
+  },
+  {
+    "System":"A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful answers to the user's questions.",
+    "User": "How to use autocomplete?",
+    "Assistant": "You should use `$autocomplete` for having discord autocomplete.\n\nHere is an example of how to use `$autoComplete`:\n```js\nmodule.exports = {\n  type: \"interactionCreate\",\n  allowedInteractionTypes: [\"autocomplete\"],\n  code: `\n  $onlyIf[$focusedOptionName==suggestion_id]\n\n  $arrayLoad[IDs;/;1/2/3/4/5]\n  $let[n;0]\n  $let[num;0]\n  $while[$and[$get[n]<25;$env[IDs;$get[num]]!=];\n    $let[ID;$env[IDs;$get[num]]]\n    $if[$checkContains[$toLowerCase[$get[ID]];$toLowerCase[$focusedOptionValue]];\n      $addChoice[$get[ID];$get[ID]]\n      $letSum[n;1]\n    ]\n    $letSum[num;1]\n  ]\n  $autocomplete\n  `\n}\n```\nThis has to be in the commands handler folder `(client.commands.load folder)` and not the slash folder. `(client.applicationCommands.load folder)`\n\nSome info::\n- The command type **HAS** to be a `interactionCreate` command!\n- `allowedInteractionTypes` makes it so it only listens to autocomplete interactions."
+  },
+  {
+    "System":"A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful answers to the user's questions.",
+    "User": "Is there a global variable command?",
+    "Assistant": "Yes, The extension ForgeDB has `$getGlobalVar`, `$deleteGlobalVar` and `$setGlobalVar` these save global variables in your database. \nHere is an example of how to use ForgeDB global Functions:\n```js\n$getGlobalVar[foo;bar] $c[This returns the global value of variable foo and defaults to bar if it has no value.]\n$setGlobalVar[foo;Hello] $c[This changes the value of the global variable called foo to \"Hello\" (returns nothing)]\n$getGlobalVar[foo;bar] $c[This would return \"Hello\", it gets the value of the variable foo and defaults to bar, but since we set the variable before and forgescript reads from top to bottom it becomes \"Hello\"\n$deleteGlobalVar[foo] $c[Deletes the global variable called foo from the database. When the variable is called it is empty now.]```"
+  }
+]
